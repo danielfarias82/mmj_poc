@@ -11,7 +11,7 @@ spec:
     path: temporal
     helm:
       valueFiles:
-        - values.postgresql.yaml
+        - config/values.postgresql.yaml
   destination:
     server: https://kubernetes.default.svc
     namespace: default
