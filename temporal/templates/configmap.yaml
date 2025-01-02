@@ -2,17 +2,26 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: temporal-config
-  labels:
-    app: temporal
+  namespace: {{ .Release.Namespace }}
 data:
-  config.yml: |
-    log:
-      level: info
+  docker.yaml: |
     persistence:
-      defaultStore:
-        sql:
-          host: {{ .Values.server.config.persistence.default.sql.host }}
-          port: {{ .Values.server.config.persistence.default.sql.port }}
-          user: {{ .Values.server.config.persistence.default.sql.user }}
-          password: {{ .Values.server.config.persistence.default.sql.password }}
-          database: {{ .Values.server.config.persistence.default.sql.database }}
+      defaultStore: default
+      visibilityStore: visibility
+      dataStores:
+        default:
+          sql:
+            pluginName: "postgres12"
+            host: {{ .Values.server.config.persistence.dataStores.default.sql.host }}
+            port: {{ .Values.server.config.persistence.dataStores.default.sql.port }}
+            user: {{ .Values.server.config.persistence.dataStores.default.sql.user }}
+            password: {{ .Values.server.config.persistence.dataStores.default.sql.password }}
+            database: {{ .Values.server.config.persistence.dataStores.default.sql.database }}
+        visibility:
+          sql:
+            pluginName: "postgres12"
+            host: {{ .Values.server.config.persistence.dataStores.visibility.sql.host }}
+            port: {{ .Values.server.config.persistence.dataStores.visibility.sql.port }}
+            user: {{ .Values.server.config.persistence.dataStores.visibility.sql.user }}
+            password: {{ .Values.server.config.persistence.dataStores.visibility.sql.password }}
+            database: {{ .Values.server.config.persistence.dataStores.visibility.sql.database }}
