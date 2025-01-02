@@ -11,17 +11,18 @@ data:
       dataStores:
         default:
           sql:
-            pluginName: "postgres12"
-            host: {{ .Values.server.config.persistence.dataStores.default.sql.host }}
-            port: {{ .Values.server.config.persistence.dataStores.default.sql.port }}
-            user: {{ .Values.server.config.persistence.dataStores.default.sql.user }}
-            password: {{ .Values.server.config.persistence.dataStores.default.sql.password }}
-            database: {{ .Values.server.config.persistence.dataStores.default.sql.database }}
+            pluginName: "{{ .Values.server.config.persistence.dataStores.default.sql.pluginName }}"
+            host: "{{ .Values.server.config.persistence.dataStores.default.sql.host }}"
+            port: "{{ .Values.server.config.persistence.dataStores.default.sql.port }}"
+            user: "{{ .Values.server.config.persistence.dataStores.default.sql.user }}"
+            password: "{{ .Values.server.config.persistence.dataStores.default.sql.password }}"
+            database: "{{ .Values.server.config.persistence.dataStores.default.sql.database }}"
         visibility:
           sql:
-            pluginName: "postgres12"
-            host: {{ .Values.server.config.persistence.dataStores.visibility.sql.host }}
-            port: {{ .Values.server.config.persistence.dataStores.visibility.sql.port }}
-            user: {{ .Values.server.config.persistence.dataStores.visibility.sql.user }}
-            password: {{ .Values.server.config.persistence.dataStores.visibility.sql.password }}
-            database: {{ .Values.server.config.persistence.dataStores.visibility.sql.database }}
+            pluginName: "{{ .Values.server.config.persistence.dataStores.visibility.sql.pluginName }}"
+            host: "{{ .Values.server.config.persistence.dataStores.visibility.sql.host }}"
+            port: "{{ .Values.server.config.persistence.dataStores.visibility.sql.port }}"
+            user: "{{ .Values.server.config.persistence.dataStores.visibility.sql.user }}"
+            password: "{{ .Values.server.config.persistence.dataStores.visibility.sql.password }}"
+            database: "{{ .Values.server.config.persistence.dataStores.visibility.sql.database }}"
+
