@@ -3,7 +3,7 @@ server:
     persistence:
       default:
         sql:
-          pluginName: "postgres16"
+          pluginName: "postgres12"
           host: "vultr-prod-a83111d1-50b2-43e9-b1b6-853269bfdd16-vultr-prod-bf45.vultrdb.com"
           port: 16751
           user: "vultradmin"
@@ -11,7 +11,7 @@ server:
           database: "temporal"
       visibility:
         sql:
-          pluginName: "postgres16"
+          pluginName: "postgres12"
           host: "vultr-prod-a83111d1-50b2-43e9-b1b6-853269bfdd16-vultr-prod-bf45.vultrdb.com"
           port: 16751
           user: "vultradmin"
