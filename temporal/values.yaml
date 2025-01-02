@@ -23,3 +23,5 @@ prometheus:
   enabled: false
 grafana:
   enabled: false
+cassandra:
+  enable: false
